@@ -25,7 +25,7 @@ model.label = PHVariable(model.struct[-1])('label')
         
 for i in range(len(model.struct)-2):
     model.add_layer(Dense(model.struct[i+1], 
-                         activation = self.next_activation(), 
+                         activation = model.next_activation(), 
                          is_dropout = True))
 model.add_layer(Dense(model.struct[-1], activation = model.output_func))
 model.training(dataset = ...,data_path = ...)
