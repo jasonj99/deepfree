@@ -34,16 +34,16 @@ model.training(dataset = ...,data_path = ...)
 # plot
 The running result can be find in 'result' folder.</br>
 
-- *loss & test accuracy - epoch curve:* </br>
+- **loss & test accuracy - epoch curve:** </br>
 <div align=center><img width="750" src=/deepfree/images/epoch_accuracy.png></div>
 
-- *prediction - epoch curve:* </br>
+- **prediction - epoch curve:** </br>
 <div align=center><img width="750" src=/deepfree/images/pred_result.png></div>
 
-- *real label -> predicted label count result:* </br>
-<div align=center><img width="700" src=/deepfree/images/label_cnt.png></div>
+- **real label -> predicted label count result:** </br>
+<div align=center><img width="650" src=/deepfree/images/label_cnt.png></div>
 
-- *t-SNE visualization:* </br>
+- **t-SNE visualization:** </br>
 <div align=center><img width="700" src=/deepfree/images/tSNE.png></div>
 
 # blog
