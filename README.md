@@ -7,7 +7,7 @@ pip install --upgrade deepfree
 ```
 # feature
 ## fast learning
-The main framework of the program relies on ``Model`` (``from core._model``) and ``Layer`` (``from core._layer``), which can import directly as "``from deepfree import Model, Layer``". You can quickly build and train the model by using them flexibly.<br />
+The main framework of the program relies on ``Model`` ( in ``core._model``) and ``Layer`` ( in ``core._layer``), which can import directly as "``from deepfree import Model, Layer``". You can quickly build and train the model by using them flexibly.<br />
 The constructed ``DBN`` and ``SAE`` can be called directly, which are inherit from ``Model``.
 ## stacking blocks
 Build model like stack blocks by calling ``Model.add_layer([list of Layer])``.<br />
