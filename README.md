@@ -14,6 +14,8 @@ By calling ``Model.add_layer(['a Layer of a list of Layer'])``, you can build th
 There are a set of ``Layer`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPooling2D``,``Flatten``,``Concatenate``, ``MultipleInput``, ``Conv2D``.
 ## flexible setting
 You can set the model's parameters listed in ``base._attribute`` when first building model (``DBN(para=...)``, ``SAE(para=...)``, ``Model(para=...)``) or training it (``Model.training(para=...)``). If you do not set a value, the default value in ``base._attribute`` will be applied.
+## results display
+``'loss & test accuracy - epoch'`` curve and ``'prediction - epoch'`` curve will be generated automatically. Furthermore, ``real label -> predicted label`` count result and ``t-SNE visualization`` image can be obtained by calling ``Model.plot_label_cnt`` and ``Model.plot_tSNE``, respectively.
 # example
 A simple DNN can be constructed and trained as:
 ```python
@@ -31,6 +33,12 @@ for i in range(len(model.struct)-2):
 model.add_layer(Dense(model.struct[-1], activation = model.output_func))
 model.training(dataset = ...,data_path = ...)
 ```
+# plot
+The running result can be find in 'result' folder.
+![loss & test accuracy - epoch curve](/images/epoch_accuracy.png)
+![prediction - epoch curve](/images/pred_result.png)
+![real label -> predicted label count result](/images/label_cnt.png)
+![t-SNE visualization](/images/tSNE.png)
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
 [zhihu](https://www.zhihu.com/people/fu-zi-36-41/posts),
