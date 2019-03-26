@@ -20,8 +20,8 @@ from deepfree import Model
 from deepfree import PHVariable,Dense
 model = Model()
 model.struct = [784, 100 ,10]
-model.input = PHVariable(self.struct[0])('input')
-model.label = PHVariable(self.struct[-1])('label')
+model.input = PHVariable(model.struct[0])('input')
+model.label = PHVariable(model.struct[-1])('label')
         
 for i in range(len(model.struct)-2):
     model.add_layer(Dense(model.struct[i+1], 
