@@ -14,7 +14,7 @@ A set of ``python Layer`` can be selected, such as ``python PHVariable``, ``pyth
 ## flexible setting
 You can set the model's parameters of listed in ``python base/_attribute.py`` when first building the model (``python DBN(para=1)``, ``python SAE(para=1)``, ``python Model(para=1)``) or training (``python Model.training(para=1)``). If you do not set a value, the default value in ``python base/_attribute.py`` will be used.
 # example
-A simple example for constructing and training DNN:
+Simple construction and training for DNN as shown below:
 ```python
 from deepfree import Model
 model = Model()
