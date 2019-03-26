@@ -41,10 +41,10 @@ The running result can be find in 'result' folder.</br>
 <div align=center><img width="750" src=/deepfree/images/pred_result.png></div>
 
 - **real label -> predicted label count result:** </br>
-<div align=center><img width="650" src=/deepfree/images/label_cnt.png></div>
+<div align=center><img width="680" src=/deepfree/images/label_cnt.png></div>
 
 - **t-SNE visualization:** </br>
-<div align=center><img width="700" src=/deepfree/images/tSNE.png></div>
+<div align=center><img width="680" src=/deepfree/images/tSNE.png></div>
 
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
