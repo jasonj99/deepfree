@@ -35,10 +35,10 @@ model.training(dataset = ...,data_path = ...)
 The running result can be find in `'result'` folder.</br>
 
 - **loss & test accuracy - epoch curve:** </br>
-<div align=center><img width="680" src=/deepfree/images/epoch_accuracy.png></div>
+<div align=center><img width="685" src=/deepfree/images/epoch_accuracy.png></div>
 
 - **prediction - epoch curve:** </br>
-<div align=center><img width="680" src=/deepfree/images/pred_result.png></div>
+<div align=center><img width="685" src=/deepfree/images/pred_result.png></div>
 
 - **real label -> predicted label count result:** </br>
 <div align=center><img width="645" src=/deepfree/images/label_cnt.png></div>
