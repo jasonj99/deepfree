@@ -33,9 +33,10 @@ model.training(dataset = ...,data_path = ...)
 ```
 # plot
 The running result can be find in 'result' folder.</br>
+- *Fig. 1 loss & test accuracy - epoch curve* </br>
 <div align=center><img width="650" src="https://github.com/fuzimaoxinan/deepfree/blob/master/deepfree/images/epoch_accuracy.png?raw=true"/></div>
 ![1](/deepfree/images/epoch_accuracy.png)</br>
-*Fig. 1 loss & test accuracy - epoch curve* </br>
+
 ![2](/deepfree/images/pred_result.png)</br>
 *Fig. 2 prediction - epoch curve* </br>
 ![3](/deepfree/images/label_cnt.png)</br>
