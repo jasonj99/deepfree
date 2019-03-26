@@ -38,7 +38,7 @@ The running result can be find in `'result'` folder.</br>
 <div align=center><img width="683" src=/deepfree/images/epoch_accuracy.png></div>
 
 - **prediction - epoch curve:** </br>
-<div align=center><img width="685" src=/deepfree/images/pred_result.png></div>
+<div align=center><img width="688" src=/deepfree/images/pred_result.png></div>
 
 - **real label -> predicted label count result:** </br>
 <div align=center><img width="643" src=/deepfree/images/label_cnt.png></div>
