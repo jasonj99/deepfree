@@ -7,7 +7,7 @@ pip install --upgrade deepfree
 ```
 # feature
 ## fast learning
-The main framework of the program relies on ``Model`` in ``core._model`` and ``Layer`` in ``core._layer``, which can import directly through ``'from deepfree import Model, Layer'``. You can quickly build and train the model by using them flexibly. In addition, the constructed ``DBN`` and ``SAE`` can be employed directly, which are inherited from ``Model``.
+The main framework of the program relies on `Model` in `core._model` and ``Layer`` in ``core._layer``, which can import directly through ``'from deepfree import Model, Layer'``. You can quickly build and train the model by using them flexibly. In addition, the constructed ``DBN`` and ``SAE`` can be employed directly, which are inherited from ``Model``.
 ## stacking blocks
 By calling ``Model.add_layer(['a Layer of a list of Layer'])``, you can build the model like stack the blocks. There are a set of ``Layer`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPooling2D``,``Flatten``,``Concatenate``, ``MultipleInput``, ``Conv2D``.
 ## flexible setting
@@ -33,7 +33,7 @@ model.training(dataset = ...,data_path = ...)
 ```
 # plot
 The running result can be find in 'result' folder.</br>
-<center>
+
 ![1](/deepfree/images/epoch_accuracy.png)</br>
 *Fig. 1 loss & test accuracy - epoch curve* </br>
 ![2](/deepfree/images/pred_result.png)</br>
@@ -42,7 +42,7 @@ The running result can be find in 'result' folder.</br>
 *Fig. 3 real label -> predicted label count result* </br>
 ![4](/deepfree/images/tSNE.png)</br>
 *Fig. 4 t-SNE visualization* </br>
-</center>
+
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
 [zhihu](https://www.zhihu.com/people/fu-zi-36-41/posts),
