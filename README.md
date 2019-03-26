@@ -10,9 +10,9 @@ pip install --upgrade deepfree
 Established model like ``DBN``, ``SAE`` for fast learning.
 ## stacking blocks
 Building model like stack blocks by calling ``Model.add_layer([list of Layer])``.<br />
-A set of ``Layer`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPooling2D``,``Flatten``,``Concatenate``, ``MultipleInput``, ``Conv2D``.
+A set of ``Layer`` in ``core/_layer.py`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPooling2D``,``Flatten``,``Concatenate``, ``MultipleInput``, ``Conv2D``.
 ## flexible setting
-You can set the model's parameters listed in ``python base/_attribute.py`` when first building model (``DBN(para=...)``, ``SAE(para=...)``, ``Model(para=...)``) or training it (``Model.training(para=...)``). If you do not set a value, the default value in ``base/_attribute.py`` will be used.
+You can set the model's parameters listed in ``base/_attribute.py`` when first building model (``DBN(para=...)``, ``SAE(para=...)``, ``Model(para=...)``) or training it (``Model.training(para=...)``). If you do not set a value, the default value in ``base/_attribute.py`` will be used.
 # example
 A simple DNN can be constructed and trained as:
 ```python
