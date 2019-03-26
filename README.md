@@ -14,7 +14,7 @@ A set of ``Layer`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPool
 ## flexible setting
 You can set the model's parameters of listed in ``python base/_attribute.py`` when first building the model (``DBN(para=...)``, ``SAE(para=...)``, ``Model(para=...)``) or training (``Model.training(para=...)``). If you do not set a value, the default value in ``base/_attribute.py`` will be used.
 # example
-Simple construction and training for DNN as shown below:
+A simple DNN can be constructed and trained as:
 ```python
 from deepfree import Model
 from deepfree import PHVariable,Dense
