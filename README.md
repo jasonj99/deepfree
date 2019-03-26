@@ -44,7 +44,7 @@ The running result can be find in 'result' folder.</br>
 <div align=center><img width="645" src=/deepfree/images/label_cnt.png></div>
 
 - **t-SNE visualization:** </br>
-<div align=center><img width="655" src=/deepfree/images/tSNE.png></div>
+<div align=center><img width="645" src=/deepfree/images/tSNE.png></div>
 
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
