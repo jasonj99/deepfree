@@ -30,7 +30,7 @@ for i in range(len(model.struct)-2):
                          is_dropout = True))
 model.add_layer(Dense(model.struct[-1], activation = model.output_func))
 model.training(dataset = ...,data_path = ...)
- ```
+```
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
 [zhihu](https://www.zhihu.com/people/fu-zi-36-41/posts),
