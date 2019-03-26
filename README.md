@@ -7,7 +7,7 @@ pip install --upgrade deepfree
 ```
 # feature
 ## rapid modeling
-Established model like ``DBN``, ``SAE`` for fast learning.
+Established model like ``DBN``, ``SAE`` for fast learning, which are inherited from ``Model``.
 ## stacking blocks
 Building model like stack blocks by calling ``Model.add_layer([list of Layer])``.<br />
 A set of ``Layer`` in ``core/_layer.py`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPooling2D``,``Flatten``,``Concatenate``, ``MultipleInput``, ``Conv2D``.
