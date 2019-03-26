@@ -27,7 +27,7 @@ for i in range(len(model.struct)-2):
                          activation = self.next_activation(), 
                          is_dropout = True))
 model.add_layer(Dense(model.struct[-1], activation = model.output_func))
-model.training(dataset = ... or data_path = ...)
+model.training(dataset = ...,data_path = ...)
  ```
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
