@@ -33,8 +33,8 @@ model.training(dataset = ...,data_path = ...)
 ```
 # plot
 The running result can be find in 'result' folder.</br>
+<center>
 ![1](/deepfree/images/epoch_accuracy.png)</br>
-<div align=center> </br>
 *Fig. 1 loss & test accuracy - epoch curve* </br>
 ![2](/deepfree/images/pred_result.png)</br>
 *Fig. 2 prediction - epoch curve* </br>
@@ -42,6 +42,7 @@ The running result can be find in 'result' folder.</br>
 *Fig. 3 real label -> predicted label count result* </br>
 ![4](/deepfree/images/tSNE.png)</br>
 *Fig. 4 t-SNE visualization* </br>
+</center>
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
 [zhihu](https://www.zhihu.com/people/fu-zi-36-41/posts),
