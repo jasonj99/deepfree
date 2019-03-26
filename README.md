@@ -35,7 +35,7 @@ model.training(dataset = ...,data_path = ...)
 The running result can be find in `'result'` folder.</br>
 
 - **loss & test accuracy - epoch curve:** </br>
-<div align=center><img width="683" src=/deepfree/images/epoch_accuracy.png></div>
+<div align=center><img width="682" src=/deepfree/images/epoch_accuracy.png></div>
 
 - **prediction - epoch curve:** </br>
 <div align=center><img width="688" src=/deepfree/images/pred_result.png></div>
