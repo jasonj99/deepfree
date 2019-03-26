@@ -10,7 +10,7 @@ pip install --upgrade deepfree
 The main framework of the program relies on ``Model`` in ``core._model`` and ``Layer`` in ``core._layer``, which can import directly as ``"from deepfree import Model, Layer"``. You can quickly build and train the model by using them flexibly.<br />
 The constructed ``DBN`` and ``SAE`` can be called directly, which are inherit from ``Model``.
 ## stacking blocks
-Build model like stack blocks by calling ``Model.add_layer([list of Layer])``.<br />
+Build model like stack blocks by calling ``Model.add_layer([*list of Layer*])``.<br />
 A set of ``Layer`` can be selected, such as ``PHVariable``, ``Dense``, ``MaxPooling2D``,``Flatten``,``Concatenate``, ``MultipleInput``, ``Conv2D``.
 ## flexible setting
 You can set the model's parameters listed in ``base._attribute`` when first building model (``DBN(para=...)``, ``SAE(para=...)``, ``Model(para=...)``) or training it (``Model.training(para=...)``). If you do not set a value, the default value in ``base._attribute`` will be used.
