@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
-import numpy as np
-from _layer import Activation
+from deepfree.core._layer import Activation
 
 class Loss(object):
     def get_loss(self, label, logits=None, output=None, loss_func=None):

@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys
-sys.path.append("../base")
-sys.path.append("../core")
-from _model import Model
-from _layer import PHVariable,Dense
-from _attribute import RBM_DICT,_AE_DICT
-from pre_model import PreModel
+from deepfree.core._model import Model
+from deepfree.core._layer import PHVariable,Dense
+from deepfree.base._attribute import RBM_DICT,_AE_DICT
+from deepfree.model.pre_model import PreModel
 
 class FTModel(Model):
     def __init__(self, **kwargs):

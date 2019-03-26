@@ -3,11 +3,10 @@ import time
 import tensorflow as tf
 import numpy as np
 import sys
-sys.path.append("../base")
-from _data import Batch
-from _loss import Loss
-from _attribute import PASS_DICT
-from _saver import Saver, Tensorboard
+from deepfree.base._data import Batch
+from deepfree.core._loss import Loss
+from deepfree.base._attribute import PASS_DICT
+from deepfree.base._saver import Saver, Tensorboard
 
 class Message(object):
     def train_message_str(self, i, time_delta, var_dict):

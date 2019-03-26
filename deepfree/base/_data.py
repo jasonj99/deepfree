@@ -2,7 +2,7 @@
 import os
 import random
 import numpy as np
-from _attribute import DATA_DICT
+from deepfree.base._attribute import DATA_DICT
 
 data_list = ['train_X','train_Y','test_X','test_Y']
 

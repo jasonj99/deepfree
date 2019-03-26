@@ -2,10 +2,7 @@ import tensorflow as tf
 import numpy as np
 np.random.seed(1337)  # for reproducibility
 
-import sys
-sys.path.append("../model")
-
-from ft_model import DBN, SAE
+from deepfree.model.ft_model import DBN, SAE
 
 from tensorflow.examples.tutorials.mnist import input_data
 

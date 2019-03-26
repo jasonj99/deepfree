@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from rbm import RBM
-from ae import AE
+from deepfree.model.rbm import RBM
+from deepfree.model.ae import AE
 
 class PreModel(object):
     def __init__(self,**kwargs):

@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
-import sys
-sys.path.append("../base")
-sys.path.append("../core")
-from _model import Model
-from _layer import PHVariable,Dense
-from _attribute import _AE_DICT
+from deepfree.core._model import Model
+from deepfree.core._layer import PHVariable,Dense
+from deepfree.base._attribute import _AE_DICT
 
 class AE(Model):
     def __init__(self,**kwargs):

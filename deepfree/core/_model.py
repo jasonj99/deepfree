@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
 import numpy as np
-import sys
-sys.path.append("../base")
-from _layer import PHVariable
-from _attribute import DATA_DICT, SHOW_DICT, MODEL_DICT
-from _data import Data
-from _train import Train
-from _evaluate import Evaluate
-from _result import Result
+from deepfree.core._layer import PHVariable
+from deepfree.base._attribute import DATA_DICT, SHOW_DICT, MODEL_DICT
+from deepfree.base._data import Data
+from deepfree.core._train import Train
+from deepfree.core._evaluate import Evaluate
+from deepfree.base._result import Result
 
 
 _opt = {'sgd':'GradientDescentOptimizer',
