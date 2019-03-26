@@ -17,6 +17,7 @@ You can set the model's parameters of listed in ``python base/_attribute.py`` wh
 Simple construction and training for DNN as shown below:
 ```python
 from deepfree import Model
+from deepfree import PHVariable,Dense
 model = Model()
 model.struct = [784, 100 ,10]
 model.input = PHVariable(self.struct[0])('input')
