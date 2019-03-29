@@ -1,5 +1,5 @@
 # deepfree
-Keras-style deep network package for classification and prediction
+Keras-style deep network package for classification and prediction.
 # install
 ``` python 
 pip install --upgrade numpy h5py
