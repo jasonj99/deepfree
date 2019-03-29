@@ -49,5 +49,6 @@ The running result can be find in `'result'` folder.</br>
 # blog
 [Github](https://github.com/fuzimaoxinan/deepfree),
 [zhihu](https://www.zhihu.com/people/fu-zi-36-41/posts),
-[CSDN](https://blog.csdn.net/fuzimango/article/list/)</br>
+[CSDN](https://blog.csdn.net/fuzimango/article/list/), 
+[PyPI](https://pypi.org/project/deepfree/)</br>
 QQ Group:640571839 
