@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
   
 setup(name = "deepfree",
-      version = "0.2.8",
+      version = "0.3.0",
       author = "Zhuofu Pan",
       author_email = "475366898@qq.com",
       description = "keras-style deep network package for classification and prediction",
@@ -24,5 +24,5 @@ setup(name = "deepfree",
       ],
       data_files=["README.md"],
       #include_package_data = True,
-      #package_data = {'deepfree': ['dataset/MNIST_data/*']}
+      #package_data = {'deepfree': ['images/*']}
 )

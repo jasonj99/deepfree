@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: deepfree
-Version: 0.2.8
+Version: 0.3.0
 Summary: keras-style deep network package for classification and prediction
 Home-page: http://github.com/fuzimaoxinan/deepfree
 Author: Zhuofu Pan
