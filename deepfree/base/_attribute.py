@@ -34,7 +34,7 @@ SHOW_DICT = dict(hypp_dict)
 
 base_dict = {# model
              'name': 'Model',
-             'layer_list':list(),
+             'layer_list':[],
              'is_sub': False,
              'hidden_activation_loc': 0,
              # train,test

@@ -71,7 +71,7 @@ class Sess(object):
         if self.open_tensorboard:
             self.tbd.train_writer.close()
         self.sess.close()
-        
+        tf.reset_default_graph()
 
 class Train(Loss,Sess,Message):
     

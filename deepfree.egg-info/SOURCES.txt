@@ -4,7 +4,6 @@ deepfree/__init__.py
 deepfree.egg-info/PKG-INFO
 deepfree.egg-info/SOURCES.txt
 deepfree.egg-info/dependency_links.txt
-deepfree.egg-info/requires.txt
 deepfree.egg-info/top_level.txt
 deepfree/base/__init__.py
 deepfree/base/_attribute.py
@@ -16,17 +15,12 @@ deepfree/core/_evaluate.py
 deepfree/core/_layer.py
 deepfree/core/_loss.py
 deepfree/core/_model.py
-<<<<<<< HEAD
 deepfree/core/_submodel.py
 deepfree/core/_train.py
 deepfree/example/__init__.py
 deepfree/example/classification_MINST.py
+deepfree/example/graph.py
 deepfree/example/test_func.py
-=======
-deepfree/core/_train.py
-deepfree/example/__init__.py
-deepfree/example/classification_MINST.py
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 deepfree/model/__init__.py
 deepfree/model/ae.py
 deepfree/model/ft_model.py

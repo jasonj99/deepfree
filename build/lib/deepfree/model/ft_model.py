@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 from deepfree.core._model import Model
 from deepfree.core._layer import phvariable,Dense
-<<<<<<< HEAD:build/lib/deepfree/model/ft_model.py
 from deepfree.base._attribute import RBM_DICT,_AE_DICT, PASS_DICT
-=======
-from deepfree.base._attribute import RBM_DICT,_AE_DICT
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/model/ft_model.py
 from deepfree.model.pre_model import PreModel
 
 class FTModel(Model):
@@ -33,7 +29,6 @@ class FTModel(Model):
         """
         Pre-training
         """
-<<<<<<< HEAD:build/lib/deepfree/model/ft_model.py
         kwargs = PASS_DICT.copy()
         kwargs.update(self.kwargs)
         kwargs.update({'name':self.pre_name, 
@@ -43,14 +38,6 @@ class FTModel(Model):
                        'n_category':self.n_category
                        })
         self.pre_model = PreModel(**kwargs)
-=======
-        self.kwargs.update({'name':self.pre_name, 
-                            'struct':self.struct[:-1], 
-                            'layer_list': self.layer_list,
-                            'sub_type':self.sub_type,
-                            'n_category':self.n_category})
-        self.pre_model = PreModel(**self.kwargs)
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/model/ft_model.py
 
 class DBN(FTModel):
     def __init__(self, **kwargs):

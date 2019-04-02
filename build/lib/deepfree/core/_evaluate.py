@@ -77,26 +77,15 @@ class Evaluate(object):
     def save_epoch_training_data(self, i, time_delta):
         self.recording_dict['epoch'].append(i+1)
         self.recording_dict['time'].append(time_delta)
-<<<<<<< HEAD:build/lib/deepfree/core/_evaluate.py
         self.recording_dict['loss'].append(self.training_dict['loss'])
         for key in self.training_dict.keys(): 
             if 'train_'+key in self.recording_dict.keys(): 
                 self.recording_dict['train_'+key].append(self.training_dict[key])
-=======
-        self.recording_dict['loss'].append(self.train_dict['loss'])
-        for key in self.train_dict.keys(): 
-            if 'train_'+key in self.recording_dict.keys(): 
-                self.recording_dict['train_'+key].append(self.train_dict[key])
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_evaluate.py
         for key in self.test_dict.keys(): 
             if 'test_'+key in self.recording_dict.keys(): 
                 self.recording_dict['test_'+key].append(self.test_dict[key])
     
-<<<<<<< HEAD:build/lib/deepfree/core/_evaluate.py
     def statistics_number_in_each_category(self):
-=======
-    def statistics_number_for_in_category(self):
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_evaluate.py
         if self.real_Y is None: 
             self.real_Y = np.argmax(self.test_Y,axis = 1)
         if self.n_real_sample is None:

@@ -24,6 +24,7 @@ class Model(Train,Evaluate,Result):
         kwargs = dict(MODEL_DICT,**kwargs)
         for key in kwargs.keys(): setattr(self, key, kwargs[key])
         if self.save_name is None: self.save_name = self.name
+        self.layer_list = []
  
         # 创建唯一变量
         if self.dropout is None:
@@ -53,7 +54,8 @@ class Model(Train,Evaluate,Result):
                 x = self.layer_list[-1].output
             elif self.input is not None:
                 x = self.input
-            else: 
+            else:
+                print("Error: there is no input exist!")
                 return
         
         # 构建层

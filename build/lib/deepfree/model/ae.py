@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
-<<<<<<< HEAD:build/lib/deepfree/model/ae.py
 from deepfree.core._submodel import SubModel
-=======
-from deepfree.core._model import Model
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/model/ae.py
 from deepfree.core._layer import phvariable, noise, Dense
 from deepfree.base._attribute import _AE_DICT
 

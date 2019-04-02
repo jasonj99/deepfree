@@ -24,17 +24,13 @@ class Model(Train,Evaluate,Result):
         kwargs = dict(MODEL_DICT,**kwargs)
         for key in kwargs.keys(): setattr(self, key, kwargs[key])
         if self.save_name is None: self.save_name = self.name
+        self.layer_list = []
  
         # 创建唯一变量
-<<<<<<< HEAD:build/lib/deepfree/core/_model.py
         if self.dropout is None:
             self.dropout = phvariable(1,'dropout',unique = True)
         if self.batch_normalization is None:
             self.batch_normalization = phvariable(1,'batch_normalization',dtype = tf.bool,unique = True)
-=======
-        self.dropout = phvariable(1,'dropout',unique = True)()
-        self.batch_normalization = phvariable(1,'batch_normalization',dtype = tf.bool,unique = True)
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_model.py
         
         # 基（父）类初始化
         Evaluate.__init__(self)
@@ -58,13 +54,13 @@ class Model(Train,Evaluate,Result):
                 x = self.layer_list[-1].output
             elif self.input is not None:
                 x = self.input
-            else: 
+            else:
+                print("Error: there is no input exist!")
                 return
         
         # 构建层
         if type(layer) == list:
             for l in layer:
-<<<<<<< HEAD:build/lib/deepfree/core/_model.py
                 if l.dropout is None: l.dropout = self.dropout
                 if l.batch_normalization is None: l.batch_normalization = self.batch_normalization
                 x = l(x)
@@ -72,11 +68,6 @@ class Model(Train,Evaluate,Result):
         else:
             if layer.dropout is None: layer.dropout = self.dropout
             if layer.batch_normalization is None: layer.batch_normalization = self.batch_normalization
-=======
-                x = l(x)
-                self.layer_list.append(l)
-        else:
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_model.py
             layer(x)
             self.layer_list.append(layer)
             

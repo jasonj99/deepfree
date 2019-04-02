@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
   
 setup(name = "deepfree",
-      version = "0.2.6",
+      version = "0.2.8",
       author = "Zhuofu Pan",
       author_email = "475366898@qq.com",
       description = "keras-style deep network package for classification and prediction",
@@ -15,7 +15,7 @@ setup(name = "deepfree",
       maintainer='Zhuofu Pan',
       maintainer_email="475366898@qq.com",
       packages = find_packages(),
-      install_requires = ['tensorflow>=1.10.0' ],
+      #install_requires = ['tensorflow>=1.10.0' ],
       platforms=['any'],
       classifiers=[
         "Programming Language :: Python :: 3",

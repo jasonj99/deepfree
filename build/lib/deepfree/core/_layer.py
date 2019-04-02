@@ -28,18 +28,8 @@ def phvariable(inpuit_dim,
                var_name,
                dtype = tf.float32,
                unique = False):
-    global dropout, batch_normalization
     if unique:
-<<<<<<< HEAD:build/lib/deepfree/core/_layer.py
         return tf.placeholder(dtype, name= var_name) 
-=======
-        if var_name == 'dropout':
-            if dropout is None: dropout = tf.placeholder(dtype, name= var_name)
-            return dropout
-        elif var_name == 'batch_normalization':
-            if batch_normalization is None: batch_normalization = tf.placeholder(dtype, name= var_name)
-            return batch_normalization
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_layer.py
     elif var_name in ['input','label']:
         # input
         return tf.placeholder(dtype, [None, inpuit_dim],name=var_name)
@@ -69,7 +59,7 @@ def noise(inputs,
           prob,
           noise_type = 'mask'):
     rand_mat = tf.random_uniform(shape=tf.shape(inputs),minval=0,maxval=1)
-    noise_co = tf.to_float(rand_mat < prob,name='Noise') # 噪声系数矩阵
+    noise_co = tf.cast(rand_mat < prob, tf.float32,name='Noise') # 噪声系数矩阵
     non_noise_co = 1-noise_co # 保留系数矩阵
     if noise_type=='gaussian':
         rand_gauss = tf.truncated_normal(inputs.shape, mean=0.0, stddev=1.0, dtype=tf.float32)
@@ -115,13 +105,8 @@ class Layer(object):
 
         self.input_dim = inputs.shape.as_list()[1]
         # dropout
-<<<<<<< HEAD:build/lib/deepfree/core/_layer.py
         if self.is_dropout and self.dropout is not None:
             inputs = tf.nn.dropout(inputs, rate = self.dropout)
-=======
-        if self.is_dropout:
-            inputs = tf.nn.dropout(inputs, 1 - dropout)
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_layer.py
         
         # weight
         if self.weight is None:

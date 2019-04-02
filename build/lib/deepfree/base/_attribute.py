@@ -34,7 +34,7 @@ SHOW_DICT = dict(hypp_dict)
 
 base_dict = {# model
              'name': 'Model',
-             'layer_list':list(),
+             'layer_list':[],
              'is_sub': False,
              'hidden_activation_loc': 0,
              # train,test
@@ -74,18 +74,8 @@ preprocess = {'task': 'classification',
              'shuffle': False,
              'prep_x': '',
              'prep_y': False,
-<<<<<<< HEAD:build/lib/deepfree/base/_attribute.py
              'scaler_y': None
              }
-=======
-             'scaler_y': None,
-             # datasets
-             'datasets': None,
-             'train_X': None,
-             'train_Y': None,
-             'test_X': None,
-             'test_Y': None}
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/base/_attribute.py
 
 DATA_DICT = dict(dataset_dict, **preprocess)
 PASS_DICT = dict(init_dict, **DATA_DICT)
