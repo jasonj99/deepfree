@@ -23,7 +23,6 @@ class Model(Train,Evaluate,Result):
         '''
         kwargs = dict(MODEL_DICT,**kwargs)
         for key in kwargs.keys(): setattr(self, key, kwargs[key])
-<<<<<<< HEAD
         if self.save_name is None: self.save_name = self.name
  
         # 创建唯一变量
@@ -31,13 +30,6 @@ class Model(Train,Evaluate,Result):
             self.dropout = phvariable(1,'dropout',unique = True)
         if self.batch_normalization is None:
             self.batch_normalization = phvariable(1,'batch_normalization',dtype = tf.bool,unique = True)
-=======
-        if self.save_name is None: self.save_name = self.name        
-        
-        # 创建唯一变量
-        self.dropout = phvariable(1,'dropout',unique = True)()
-        self.batch_normalization = phvariable(1,'batch_normalization',dtype = tf.bool,unique = True)
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         
         # 基（父）类初始化
         Evaluate.__init__(self)
@@ -67,7 +59,6 @@ class Model(Train,Evaluate,Result):
         # 构建层
         if type(layer) == list:
             for l in layer:
-<<<<<<< HEAD
                 if l.dropout is None: l.dropout = self.dropout
                 if l.batch_normalization is None: l.batch_normalization = self.batch_normalization
                 x = l(x)
@@ -75,11 +66,6 @@ class Model(Train,Evaluate,Result):
         else:
             if layer.dropout is None: layer.dropout = self.dropout
             if layer.batch_normalization is None: layer.batch_normalization = self.batch_normalization
-=======
-                x = l(x)
-                self.layer_list.append(l)
-        else:
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
             layer(x)
             self.layer_list.append(layer)
             
@@ -106,7 +92,6 @@ class Model(Train,Evaluate,Result):
         return False
     
     def get_merge(self):
-<<<<<<< HEAD
     
         v_list = tf.global_variables()
         with tf.name_scope(self.name):
@@ -118,22 +103,6 @@ class Model(Train,Evaluate,Result):
                     tf.summary.scalar(index, eval('self.'+index))
             #self.merge = tf.summary.merge_all()
             self.merge = tf.summary.merge(tf.get_collection(tf.GraphKeys.SUMMARIES,self.name))
-=======
-        if self.is_sub:
-            self.tbd.scalars_histogram('weight',self.weight)
-            self.tbd.scalars_histogram('bias_x',self.bias_x)
-            self.tbd.scalars_histogram('bias_h',self.bias_h)
-        else:
-            v_list = tf.global_variables()
-            for v in v_list:
-                if 'weight' in v.name or 'bias' in v.name:
-                    name = np.split(v.name,'/')[-1]
-                    self.tbd.scalars_histogram(name,v)
-        for index in ['loss','accuracy','rmse','R2']:
-            if eval('self.'+index) is not None:
-                tf.summary.scalar(index, eval('self.'+index))
-        self.merge = tf.summary.merge(tf.get_collection(tf.GraphKeys.SUMMARIES,self.name))
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
     
     def before_training(self,**kwargs):
         for key in kwargs.keys(): setattr(self, key, kwargs[key])
@@ -142,7 +111,6 @@ class Model(Train,Evaluate,Result):
             # input
             print("Please set Model.input before calling Model.add_layer()!"); return False
         
-<<<<<<< HEAD
         if self.output is None:
             # output
             self.deep_feature = self.layer_list[-2].output
@@ -166,32 +134,6 @@ class Model(Train,Evaluate,Result):
             # pred
             if self.pred is None:
                 self.pred = self.output
-=======
-        if self.is_sub == False:
-            if self.output is None:
-                # output
-                self.deep_feature = self.layer_list[-2].output
-                self.logits = self.layer_list[-1].add_in
-                self.output = self.layer_list[-1].output
-            
-            if self.task == 'classification':
-                # accuracy
-                if self.accuracy is None:
-                    self.accuracy = self.get_accuracy()
-                # pred
-                if self.pred is None:
-                    self.pred = self.output_arg
-            else:
-                # rmse
-                if self.rmse is None:
-                    self.rmse = self.get_rmse()
-                # R2
-                if self.accuracy is None:
-                    self.R2 = self.get_R2()
-                # pred
-                if self.pred is None:
-                    self.pred = self.output
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         
         if self.batch_training is None:
             # loss
@@ -202,12 +144,7 @@ class Model(Train,Evaluate,Result):
                     self.loss = self.get_loss(self.label, logits = self.logits)
             
             # dc_lr
-<<<<<<< HEAD
             lr = self.lr
-=======
-            if self.is_sub: lr = self.pre_lr
-            else: lr = self.lr
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
             if self.opt == 'adam' or self.opt == 'rmsp': 
                 self.global_step =  None
                 dc_lr = lr
@@ -223,20 +160,11 @@ class Model(Train,Evaluate,Result):
             trainer = eval('tf.train.' + _opt[self.opt])
             self.batch_training = trainer(learning_rate=dc_lr).minimize(self.loss,global_step=self.global_step)
         
-<<<<<<< HEAD
         # init
         self.init_sess()
         
         # merge
         if self.tbd is not None:
-=======
-        #sess
-        if self.sess is None:  
-            self.start_sess()
-        
-        # merge
-        if self.tbd is not None:  
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
             self.get_merge()
         
         # data

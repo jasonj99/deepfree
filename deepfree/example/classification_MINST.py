@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 #import tensorflow as tf
 import numpy as np
 import tensorflow as tf
-=======
-import tensorflow as tf
-import numpy as np
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 np.random.seed(1337)  # for reproducibility
 
 from deepfree.model.ft_model import DBN, SAE
@@ -21,17 +16,10 @@ x_dim=datasets[0].shape[1]
 y_dim=datasets[1].shape[1]
 p_dim=int(np.sqrt(x_dim))
 
-<<<<<<< HEAD
 select_method = 1
 
 print(tf.get_default_graph())
 
-=======
-# reset graph
-tf.reset_default_graph()
-
-select_method = 1
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 
 if select_method==1:
     classifier = DBN(
@@ -42,20 +30,13 @@ if select_method==1:
                  lr=1e-3,
                  task='classification',
                  opt='rmsp',
-<<<<<<< HEAD
                  epoch=6,
-=======
-                 epoch=18,
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
                  batch_size=1280,
                  dropout_rate=0.12,
                  units_type=['gaussian','binary'],
                  pre_lr=1e-3,
                  pre_epoch=1,
-<<<<<<< HEAD
                  open_tensorboard = True,
-=======
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
                  cd_k=1)
 if select_method==2:
     classifier = SAE(
@@ -79,7 +60,6 @@ if select_method==2:
 classifier.training(datasets = datasets)
 
 # end sess
-<<<<<<< HEAD
 classifier.end_sess()
 
 print(tf.get_default_graph())
@@ -87,6 +67,3 @@ print(classifier.dropout.graph)
 tf.reset_default_graph()
 print(classifier.dropout)
 print(classifier.dropout.graph)
-=======
-classifier.end_sess()
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
