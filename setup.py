@@ -4,11 +4,7 @@
 from setuptools import setup, find_packages
   
 setup(name = "deepfree",
-<<<<<<< HEAD
       version = "0.2.6",
-=======
-      version = "0.2.3",
->>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
       author = "Zhuofu Pan",
       author_email = "475366898@qq.com",
       description = "keras-style deep network package for classification and prediction",
