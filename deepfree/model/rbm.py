@@ -1,21 +1,37 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
+<<<<<<< HEAD
 from deepfree.core._submodel import SubModel
+=======
+from deepfree.core._model import Model
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 from deepfree.core._layer import phvariable,Dense
 from deepfree.base._attribute import RBM_DICT
 
 prob_func = {'gaussian': 'linear', 'binary': 'sigmoid'}
 
+<<<<<<< HEAD
 class RBM(SubModel):
     def __init__(self, **kwargs):
         self.show_dict = RBM_DICT.copy()
         kwargs = dict(RBM_DICT, **kwargs)
         super().__init__(**kwargs)
+=======
+class RBM(Model):
+    def __init__(self, **kwargs):
+        self.show_dict = RBM_DICT.copy()
+        kwargs = dict(RBM_DICT, **kwargs)
+        super(RBM, self).__init__(**kwargs)
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
     
     def build_model(self):
         
         # variable
+<<<<<<< HEAD
         self.input = phvariable(self.struct[0],'input')
+=======
+        self.input = phvariable([None, self.struct[0]],'input')
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         
         with tf.name_scope('CD-k'):
             
@@ -62,7 +78,11 @@ class RBM(SubModel):
             return p
         else:
             rand_mat = tf.random_uniform(shape=tf.shape(p),minval=0,maxval=1)
+<<<<<<< HEAD
             return tf.cast(rand_mat<p,tf.float32) # sample
+=======
+            return tf.to_float(rand_mat<p) # sample
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
     
     def maximum_likelihood(self, v0, vk, h0, hk):
         with tf.name_scope('Gradient_Descent'):

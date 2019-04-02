@@ -49,6 +49,7 @@ class Tensorboard(object):
         if not os.path.exists(write_path): os.makedirs(write_path)
         self.train_writer = tf.summary.FileWriter(write_path, self.sess.graph)
         
+<<<<<<< HEAD
     def scalars_histogram(self,name,var):
         """Attach a lot of summaries to a Tensor (for TensorBoard visualization)."""
         mean = tf.reduce_mean(var)
@@ -58,3 +59,15 @@ class Tensorboard(object):
         tf.summary.scalar('mean', mean)
         # 用直方图记录参数的分布
         tf.summary.histogram('distribution', var)
+=======
+    def scalars_histogram(name,var):
+        """Attach a lot of summaries to a Tensor (for TensorBoard visualization)."""
+        with tf.name_scope(name):
+          mean = tf.reduce_mean(var)
+          stddev = tf.sqrt(tf.reduce_mean(tf.square(var - mean)))
+          # 使用tf.summary.scaler记录下var的标准差，均值
+          tf.summary.scalar('stddev', stddev)
+          tf.summary.scalar('mean', mean)
+          # 用直方图记录参数的分布
+          tf.summary.histogram('distribution', var)
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f

@@ -30,7 +30,16 @@ def phvariable(inpuit_dim,
                unique = False):
     global dropout, batch_normalization
     if unique:
+<<<<<<< HEAD:build/lib/deepfree/core/_layer.py
         return tf.placeholder(dtype, name= var_name) 
+=======
+        if var_name == 'dropout':
+            if dropout is None: dropout = tf.placeholder(dtype, name= var_name)
+            return dropout
+        elif var_name == 'batch_normalization':
+            if batch_normalization is None: batch_normalization = tf.placeholder(dtype, name= var_name)
+            return batch_normalization
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_layer.py
     elif var_name in ['input','label']:
         # input
         return tf.placeholder(dtype, [None, inpuit_dim],name=var_name)
@@ -106,8 +115,13 @@ class Layer(object):
 
         self.input_dim = inputs.shape.as_list()[1]
         # dropout
+<<<<<<< HEAD:build/lib/deepfree/core/_layer.py
         if self.is_dropout and self.dropout is not None:
             inputs = tf.nn.dropout(inputs, rate = self.dropout)
+=======
+        if self.is_dropout:
+            inputs = tf.nn.dropout(inputs, 1 - dropout)
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f:build/lib/deepfree/core/_layer.py
         
         # weight
         if self.weight is None:

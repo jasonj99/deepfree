@@ -53,6 +53,7 @@ base_dict = {# model
 
 init_dict = {'sess': None,
              'saver': None,
+<<<<<<< HEAD
              'tbd': None,
              'dropout': None,
              'batch_normalization': None
@@ -68,17 +69,36 @@ dataset_dict={# datasets
              }
 
 preprocess = {'task': 'classification',
+=======
+             'tbd': None
+             }
+
+DATA_DICT = {'task': 'classification',
+             'n_category': None,
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
              # setting
              'data_path': None,
              'split_rate': 0.0,
              'shuffle': False,
              'prep_x': '',
              'prep_y': False,
+<<<<<<< HEAD
              'scaler_y': None
              }
 
 DATA_DICT = dict(dataset_dict, **preprocess)
 PASS_DICT = dict(init_dict, **DATA_DICT)
+=======
+             'scaler_y': None,
+             # datasets
+             'datasets': None,
+             'train_X': None,
+             'train_Y': None,
+             'test_X': None,
+             'test_Y': None}
+
+PASS_DICT = dict(DATA_DICT, **init_dict)
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 MODEL_DICT = dict(user_dict, **hypp_dict, **base_dict, **PASS_DICT)
 
 pre_dict = {# hyperparameter

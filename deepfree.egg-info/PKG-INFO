@@ -1,6 +1,10 @@
 Metadata-Version: 2.1
 Name: deepfree
+<<<<<<< HEAD
 Version: 0.2.6
+=======
+Version: 0.2.3
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 Summary: keras-style deep network package for classification and prediction
 Home-page: http://github.com/fuzimaoxinan/deepfree
 Author: Zhuofu Pan
@@ -9,7 +13,11 @@ Maintainer: Zhuofu Pan
 Maintainer-email: 475366898@qq.com
 License: UNKNOWN
 Description: # deepfree
+<<<<<<< HEAD
         Keras-style deep network package for classification and prediction.
+=======
+        Keras-style deep network package for classification and prediction
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         # install
         ``` python 
         pip install --upgrade numpy h5py
@@ -19,7 +27,11 @@ Description: # deepfree
         ## fast learning
         The main framework of the program relies on `Model` in `core._model` and `Layer` in `core._layer`, which can import directly through `'from deepfree import Model, Layer'`. You can quickly build and train the model by using them flexibly. In addition, the constructed `DBN` and `SAE` can be employed directly, which are inherited from `Model`.
         ## stacking blocks
+<<<<<<< HEAD
         By calling `Model.add_layer(['a Layer of a list of Layer'])`, you can build the model like stack the blocks. There are a set of `Layer` can be selected, such as `phvariable`, `maxpooling2d`,`flatten`,`concatenate`, `Dense`, `Conv2D`.
+=======
+        By calling `Model.add_layer(['a Layer of a list of Layer'])`, you can build the model like stack the blocks. There are a set of `Layer` can be selected, such as `PHVariable`, `Dense`, `MaxPooling2D`,`Flatten`,`Concatenate`, `MultipleInput`, `Conv2D`.
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         ## flexible setting
         You can set the model's parameters listed in `base._attribute` when first building model (`DBN(para=...)`, `SAE(para=...)`, `Model(para=...)`) or training it (`Model.training(para=...)`). If you do not set a value, the default value in `base._attribute` will be applied.
         ## results display
@@ -28,6 +40,7 @@ Description: # deepfree
         A simple DNN can be constructed and trained as:
         ```python
         from deepfree import Model
+<<<<<<< HEAD
         from deepfree import phvariable,Dense
         model = Model()
         model.struct = [784, 100 ,10]
@@ -37,6 +50,17 @@ Description: # deepfree
         for i in range(len(model.struct)-2):
             model.add_layer(Dense(model.struct[i+1], 
                                  activation = model.next_hidden_activation(), 
+=======
+        from deepfree import PHVariable,Dense
+        model = Model()
+        model.struct = [784, 100 ,10]
+        model.input = PHVariable(model.struct[0])('input')
+        model.label = PHVariable(model.struct[-1])('label')
+                
+        for i in range(len(model.struct)-2):
+            model.add_layer(Dense(model.struct[i+1], 
+                                 activation = model.next_activation(), 
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
                                  is_dropout = True))
         model.add_layer(Dense(model.struct[-1], activation = model.output_func))
         model.training(dataset = ...,data_path = ...)
@@ -59,8 +83,12 @@ Description: # deepfree
         # blog
         [Github](https://github.com/fuzimaoxinan/deepfree),
         [zhihu](https://www.zhihu.com/people/fu-zi-36-41/posts),
+<<<<<<< HEAD
         [CSDN](https://blog.csdn.net/fuzimango/article/list/), 
         [PyPI](https://pypi.org/project/deepfree/)</br>
+=======
+        [CSDN](https://blog.csdn.net/fuzimango/article/list/)</br>
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         QQ Group:640571839 
         
 Keywords: deep network,deep learning,DBN,SAE

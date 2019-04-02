@@ -2,6 +2,12 @@
 import tensorflow as tf
 import numpy as np
 
+<<<<<<< HEAD
+=======
+dropout = None
+batch_normalization = None
+
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
 #######################
 #      激活函数
 #######################
@@ -15,7 +21,11 @@ class Activation(object):
             return getattr(tf.nn, name, None)
     
     '''在这里自定义激活函数'''
+<<<<<<< HEAD
     def gaussian(z):
+=======
+    def gaussain(z):
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         return 1-tf.exp(-tf.square(z)) 
     def linear(z):
         return z*tf.constant(1.0)
@@ -30,7 +40,16 @@ def phvariable(inpuit_dim,
                unique = False):
     global dropout, batch_normalization
     if unique:
+<<<<<<< HEAD
         return tf.placeholder(dtype, name= var_name) 
+=======
+        if var_name == 'dropout':
+            if dropout is None: dropout = tf.placeholder(dtype, name= var_name)
+            return dropout
+        elif var_name == 'batch_normalization':
+            if batch_normalization is None: batch_normalization = tf.placeholder(dtype, name= var_name)
+            return batch_normalization
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
     elif var_name in ['input','label']:
         # input
         return tf.placeholder(dtype, [None, inpuit_dim],name=var_name)
@@ -80,9 +99,13 @@ class Layer(object):
                  activation = 'linear',
                  trainable = True,
                  is_dropout = False,
+<<<<<<< HEAD
                  dropout = None,
                  is_bn = False,
                  batch_normalization = None):
+=======
+                 is_bn = False):
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         self.weight = weight
         self.bias = bias
         if type(activation) == str:
@@ -91,9 +114,13 @@ class Layer(object):
             self.activation = activation
         self.trainable = trainable
         self.is_dropout = is_dropout
+<<<<<<< HEAD
         self.dropout = dropout
         self.is_bn = is_bn
         self.batch_normalization = batch_normalization
+=======
+        self.is_bn = is_bn
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         
     def __call__(self, inputs):
         if hasattr(self, 'output') == False: 
@@ -106,12 +133,21 @@ class Layer(object):
 
         self.input_dim = inputs.shape.as_list()[1]
         # dropout
+<<<<<<< HEAD
         if self.is_dropout and self.dropout is not None:
             inputs = tf.nn.dropout(inputs, rate = self.dropout)
         
         # weight
         if self.weight is None:
             if self.name =='Dense':
+=======
+        if self.is_dropout:
+            inputs = tf.nn.dropout(inputs, 1 - dropout)
+        
+        # weight
+        if self.weight is None:
+            if self.name =='Dense' or self.name =='MultipleInput':
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
                 glorot_normal = np.sqrt(2 / (self.input_dim + self.output_dim))
                 self.weight = tf.Variable(tf.truncated_normal(
                                           shape=[self.input_dim, self.output_dim], 
@@ -133,9 +169,15 @@ class Layer(object):
         # add_in
         self.add_in = self.get_add_in(inputs)
         
+<<<<<<< HEAD
         if self.is_bn and self.batch_normalization is not None:
             # batch_normalization
             self.add_in = tf.layers.batch_normalization(self.add_in, training = self.batch_normalization)
+=======
+        if self.is_bn:
+            # batch_normalization
+            self.add_in = tf.layers.batch_normalization(self.add_in, training = batch_normalization)
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
         elif self.bias is None:
             # bias
             self.bias = tf.Variable(tf.constant(0.0, 
@@ -154,7 +196,11 @@ class Dense(Layer):
                  **kwargs):
         self.output_dim = output_dim
         self.name = 'Dense'
+<<<<<<< HEAD
         super().__init__(**kwargs)
+=======
+        super(Dense, self).__init__(**kwargs)
+>>>>>>> 987acc1d5a935b80c5ee1c424ca93f2b580c8c7f
     
     def get_add_in(self, inputs):
         return tf.matmul(inputs, self.weight)
