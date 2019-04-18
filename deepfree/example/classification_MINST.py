@@ -61,9 +61,3 @@ classifier.training(datasets = datasets)
 
 # end sess
 classifier.end_sess()
-
-print(tf.get_default_graph())
-print(classifier.dropout.graph)
-tf.reset_default_graph()
-print(classifier.dropout)
-print(classifier.dropout.graph)
