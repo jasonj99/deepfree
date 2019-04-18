@@ -43,7 +43,11 @@ class Evaluate(object):
             误分率:
             FPR_i = ∑_j pred_cnt[i][j ≠ i] / ∑_j n_real_sample_i[j ≠ i]
         '''
-        pred_cnt = np.zeros((self.n_category,self.n_category))
+        if self.n_category > 1:
+            n_category = self.n_category
+        else:
+            n_category = 2
+        pred_cnt = np.zeros((n_category,n_category))
         for i in range(self.n_real_sample):
             # 第 r 号分类 被 分到了 第 p 号分类
             p = self.pred_Y[i]
@@ -53,7 +57,7 @@ class Evaluate(object):
         # array是一个1维数组时，形成以array为对角线的对角阵；array是一个2维矩阵时，输出array对角线组成的向量
         FDR = np.diag(pred_cnt_pro)
         FPR = [(self.n_real_sample_i[i]-pred_cnt[i][i])/
-               (self.n_real_sample-self.n_real_sample_i[i]) for i in range(self.n_category)]
+               (self.n_real_sample-self.n_real_sample_i[i]) for i in range(n_category)]
         
         self.best_dict['pred_cnt'] = pred_cnt
         self.best_dict['pred_cnt_pro'] = pred_cnt_pro
@@ -87,7 +91,9 @@ class Evaluate(object):
     
     def statistics_number_in_each_category(self):
         if self.real_Y is None: 
-            self.real_Y = np.argmax(self.test_Y,axis = 1)
+            self.real_Y = self.test_Y
+            if self.rael_Y.shape[1] > 1:
+                self.real_Y = np.argmax(self.test_Y,axis = 1)
         if self.n_real_sample is None:
             # 第 i 类样本总数, 样本总数
             self.n_real_sample_i = np.sum(self.test_Y,axis = 0,dtype = np.int)
