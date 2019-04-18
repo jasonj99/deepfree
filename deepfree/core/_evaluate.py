@@ -22,8 +22,8 @@ class Evaluate(object):
             self.output_arg = tf.argmax(self.output,axis=1)
             self.label_arg = tf.argmax(self.label,axis=1)
         else:
-            self.output_arg = tf.to_int(tf.ones_like(self.output) < self.output)
-            self.label_arg = tf.to_int(tf.ones_like(self.label_arg) < self.label_arg)
+            self.output_arg = tf.to_int(tf.ones_like(self.output)*0.5 + self.output)
+            self.label_arg = tf.to_int(self.label)
         return tf.reduce_mean(tf.cast(tf.equal(self.output_arg,self.label_arg),tf.float32))
     
     def get_rmse(self):
